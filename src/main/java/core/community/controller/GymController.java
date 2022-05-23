@@ -3,8 +3,6 @@ package core.community.controller;
 import core.community.dto.GymDto;
 import core.community.service.GymService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +29,7 @@ public class GymController {
 
 
     // 특정 id의 헬스장 정보불러오기
-    @GetMapping("getAnyGym/id/{id}")
+    @GetMapping("getAnyGym/{id}")
     ResponseEntity<?> getGym(@PathVariable Long id) {
         return ResponseEntity.ok(gymService.getGym(id));
     }
@@ -48,5 +46,4 @@ public class GymController {
     ResponseEntity<?> getNameGyms(@RequestParam(value = "gymName", required = false) String name) {
         return ResponseEntity.ok(gymService.getNameGyms(name));
     }
-
 }
