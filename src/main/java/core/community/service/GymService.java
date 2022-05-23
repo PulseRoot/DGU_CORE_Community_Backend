@@ -68,4 +68,19 @@ public class GymService {
         return list;
     }
 
+    public List<?> getNameGyms(String name) {
+        List <GymListDto> list = new ArrayList<>();
+
+        for (Gym gym : gymRepository.customSearch(name)) {
+            GymListDto gymCard = new GymListDto();
+            gymCard.setName(gym.getName());
+            gymCard.setPrice(gym.getPrice());
+            gymCard.setLocation(gym.getLocation());
+
+            list.add(gymCard);
+        }
+        return list;
+
+    }
+
 }
