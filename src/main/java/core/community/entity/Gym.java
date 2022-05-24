@@ -27,6 +27,8 @@ public class Gym {
 
     private String joinedDate;
 
+    private String imgUrl;
+
     public static Gym createGym(GymDto gymDto) {
         Gym gym = new Gym();
         gym.setName(gymDto.getName());
@@ -34,6 +36,7 @@ public class Gym {
         gym.setLocation(gymDto.getLocation());
         gym.setDescription(gymDto.getDescription());
         gym.setJoinedDate(gymDto.getJoinedDate());
+        gym.setImgUrl(gymDto.getImgUrl());
         return gym;
     }
 }

@@ -10,8 +10,6 @@ import java.util.Optional;
 public interface GymRepository extends JpaRepository<Gym, Long> {
     List<Gym> findByLocation(String location);
 
-    List<Gym> findByNameContainingIgnoreCase(String name);
-
     @Query("Select gym from Gym gym where lower(gym.name) like lower(concat('%', :name, '%'))")
     List<Gym> customSearch(String name);
 
